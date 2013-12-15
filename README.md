@@ -13,7 +13,6 @@ Read more about [Blocss](https://blocss.github.io/blocss).
 * Git: `git clone https://github.com/Blocss/arrange`
 
 ## Available classes
-Not: these are defaults, you can alter the names with variables
 
 * `.arrange` - The core component class
 * `.arrange--middle` - The modifier class for middle-aligned cells
@@ -22,6 +21,8 @@ Not: these are defaults, you can alter the names with variables
 * `.arrange--gutter` - The modifier class to add a gutter based on `$space`
 * `.arrange__size-fit` - The child class for cells to snap to fit their content
 * `.arrange__size-fill` - The child class for cells to expand to fill the remaining space
+
+## Usage
 
 N.B. This component affects the width of images in cells.
 
