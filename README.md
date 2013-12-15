@@ -1,4 +1,4 @@
-# Blocss Arrange – v1.0.0
+# Blocss Arrange – v1.0.1
 
 A [Blocss](https://github.com/Blocss/blocss/) component for horizontally and vertically arranging a single row of
 cells. Includes modifier classes for equal-width cells and gutter-separated
