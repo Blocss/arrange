@@ -1,5 +1,9 @@
 == HEAD
 
+== 1.0.2 (Oct 27, 2014)
+
+* remove non-utf 8 quotes
+
 == 1.0.1 (Dec 15, 2013)
 
 * Minor readme fixes
