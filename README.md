@@ -1,4 +1,4 @@
-# Blocss Arrange – v1.0.3
+# Blocss: molecules.arrange – v1.1.0
 
 A [Blocss](https://github.com/Blocss/blocss/) component for horizontally and vertically arranging a single row of
 cells. Includes modifier classes for equal-width cells and gutter-separated
@@ -21,6 +21,13 @@ Read more about [Blocss](https://blocss.github.io/blocss).
 * `.arrange--gutter` - The modifier class to add a gutter based on `$space`
 * `.arrange__size-fit` - The child class for cells to snap to fit their content
 * `.arrange__size-fill` - The child class for cells to expand to fill the remaining space
+
+## Available settings
+
+* `$blocss-arrange-namespace` - Prefixes classes with a namespace, defaults to `$blocss-namespace`
+* `$blocss-use-arrange` - Enables/disables entire arrange code, defaults to `true`
+* `$blocss-arrange-gutter` - Defines gutter width for `.arrange--gutter`, defaults to `$blocss-space`
+* `$blocss-breakpoint-has-collapsed-arrange` - Defines which namespaced breakpoints you would like to collapse the arrange, defaults to `()`
 
 ## Usage
 
