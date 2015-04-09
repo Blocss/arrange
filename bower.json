@@ -1,5 +1,22 @@
 {
     "name": "blocss-arrange",
-    "version": "1.0.3",
-    "main": "_arrange.scss"
+    "version": "1.1.0",
+    "homepage": "https://github.com/Blocss/molecules.arrange",
+    "authors": [
+        "Bram Smulders <bram@bramsmulders.com>"
+    ],
+    "description": "This component lets you lay out a row of cells in various ways.",
+    "main": "_molecules.arrange.scss",
+    "keywords": [
+        "blocss",
+        "oocss",
+        "atomic design",
+        "css",
+        "arrange"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "blocss-defaults": "~1.0.0",
+        "blocss-mixins": "~1.0.0"
+    }
 }
