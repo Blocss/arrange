@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! blocss-arrange v1.0.3 | MIT License | github.com/Blocss */
+/*! blocss-arrange v1.1.0 | MIT License | github.com/Blocss */
 
 /*----------------------------------------------------------------------------*\
     ARRANGE
@@ -25,8 +25,23 @@
 /*  Variables
 \*----------------------------------------------------------------------------*/
 
-// Module can be disabled by switching `$use-arrange` to `false`
-$use-arrange:               true                            !default;
+/**
+ * Namespacing
+ */
+$blocss-arrange-namespace: $blocss-namespace !default;
+
+
+/**
+ * Module can be disabled by switching `$blocss-use-arrange` to `false`
+ */
+$blocss-use-arrange: true !default;
+
+
+/**
+ * Gutter
+ */
+$blocss-arrange-gutter: $blocss-space !default;
+
 
 /**
  * Define which namespaced breakpoints you would like to collapse the arrange
@@ -34,9 +49,9 @@ $use-arrange:               true                            !default;
  * $breakpoint-has-x:       ('palm', 'desk');
  *
  * Note: the name of the breakpoint must exist in the list of `$breakpoints`
- *       in the Blocss base repository
+ *       in `settings.defaults` or your own vars file
  */
-$breakpoint-has-collapsed-arrange:  ()                      !default;
+$blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
 
 
 
@@ -54,8 +69,8 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
 @mixin arrange-collapse () {
     display: block; /* 1 */
 
-    > .arrange__size-fill,
-    > .arrange__size-fit {
+    > .#{$blocss-grid-namespace}arrange__size-fill,
+    > .#{$blocss-grid-namespace}arrange__size-fit {
         display: block; /* 1 */
         width: 100%; /* 2 */
         padding-left: 0; /* 3 */
@@ -71,7 +86,7 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
 /*  Core arrange componet
 \*----------------------------------------------------------------------------*/
 
-@if $use-arrange == true{
+@if $blocss-use-arrange == true{
 
 /**
  * `arrange` must only contain 'arrange__size-fit' and 'arrange__size-fill' child
@@ -89,7 +104,7 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
  * 3. Reset the table-layout algorithm in case a component is nested.
  * 4. Make sure the component fills the full width of its parent.
  */
-.arrange {
+.#{$blocss-grid-namespace}arrange {
     display: table; /* 1 */
     margin: 0; /* 2 */
     padding: 0; /* 2 */
@@ -107,8 +122,8 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
      *    Margin has no effect when coupled with `display: table-cell`.
      * 2. All cells are top-aligned by default
      */
-    .arrange__size-fill,
-    .arrange__size-fit {
+    .#{$blocss-grid-namespace}arrange__size-fill,
+    .#{$blocss-grid-namespace}arrange__size-fit {
         display: table-cell;
         padding: 0; /* 1 */
         vertical-align: top; /* 2 */
@@ -118,7 +133,7 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
     /**
      * Make sure the main content block expands to fill the remaining space.
      */
-    .arrange__size-fill {
+    .#{$blocss-grid-namespace}arrange__size-fill {
         width: 100%;
     }
 
@@ -128,7 +143,7 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
          * 'arrange__size-fit' cannot be fluid, otherwise they lose their ability to
          * provide size to a cell.
          */
-        .arrange__size-fit img {
+        .#{$blocss-grid-namespace}arrange__size-fit img {
             max-width: none;
             width: auto;
         }
@@ -138,26 +153,26 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Vertical alignment modifiers
 \*----------------------------------------------------------------------------*/
 
-.arrange--top {
+.#{$blocss-grid-namespace}arrange--top {
 
-    > .arrange__size-fill,
-    > .arrange__size-fit {
+    > .#{$blocss-grid-namespace}arrange__size-fill,
+    > .#{$blocss-grid-namespace}arrange__size-fit {
         vertical-align: top;
     }
 }
 
-.arrange--middle {
+.#{$blocss-grid-namespace}arrange--middle {
 
-    > .arrange__size-fill,
-    > .arrange__size-fit {
+    > .#{$blocss-grid-namespace}arrange__size-fill,
+    > .#{$blocss-grid-namespace}arrange__size-fit {
         vertical-align: middle;
     }
 }
 
-.arrange--bottom {
+.#{$blocss-grid-namespace}arrange--bottom {
 
-    > .arrange__size-fill,
-    > .arrange__size-fit {
+    > .#{$blocss-grid-namespace}arrange__size-fill,
+    > .#{$blocss-grid-namespace}arrange__size-fit {
         vertical-align: bottom;
     }
 }
@@ -171,7 +186,7 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
  * This layout algorithm will create equal-width table cells, irrespective of
  * the width of their content.
  */
-.arrange--equal {
+.#{$blocss-grid-namespace}arrange--equal {
     table-layout: fixed;
 
     /**
@@ -179,8 +194,8 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
      * It's recommended that only 'Arrange-sizeFill' be used for equal width cells.
      * Their inner images will automatically be responsive.
      */
-    > .arrange__size-fill,
-    > .arrange__size-fit {
+    > .#{$blocss-grid-namespace}arrange__size-fill,
+    > .#{$blocss-grid-namespace}arrange__size-fit {
         width: auto;
     }
 }
@@ -190,11 +205,11 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Gutter-separating modifier
 \*----------------------------------------------------------------------------*/
 
-.arrange--gutter {
+.#{$blocss-grid-namespace}arrange--gutter {
 
-    > .arrange__size-fill,
-    > .arrange__size-fit {
-        @include rem(padding-left, $space);
+    > .#{$blocss-grid-namespace}arrange__size-fill,
+    > .#{$blocss-grid-namespace}arrange__size-fit {
+        @include rem(padding-left, $blocss-arrange-gutter);
 
         &:first-child {
             padding-left: 0;
@@ -207,7 +222,7 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Arrange collapse
 \*----------------------------------------------------------------------------*/
 
-.arrange--collapse {
+.#{$blocss-grid-namespace}arrange--collapse {
     @include arrange-collapse;
 }
 
@@ -217,9 +232,9 @@ $breakpoint-has-collapsed-arrange:  ()                      !default;
 \*----------------------------------------------------------------------------*/
 
 /* Collapsed arrange based on breakpoint */
-@each $state in $breakpoint-has-collapsed-arrange {
+@each $state in $blocss-breakpoint-has-collapsed-arrange {
     @include media-query(#{$state}) {
-        .arrange--collapse--#{$state} {
+        .#{$blocss-grid-namespace}arrange--collapse--#{$state} {
             @include arrange-collapse;
         }
     }

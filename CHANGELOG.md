@@ -1,5 +1,9 @@
 == HEAD
 
+== 1.1.0 (Apr 9, 2015)
+
+* added utf-8 header
+
 == 1.0.3 (Oct 27, 2014)
 
 * added utf-8 header

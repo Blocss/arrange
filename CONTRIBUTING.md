@@ -95,11 +95,11 @@ project:
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/arrange
+   git clone https://github.com/<your-username>/molecules.arrange
    # Navigate to the newly cloned directory
-   cd arrange
+   cd molecules.arrange
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/Blocss/arrange
+   git remote add upstream https://github.com/Blocss/molecules.arrange
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
