@@ -1,4 +1,4 @@
-# Blocss: molecules.arrange – v1.1.0
+# Blocss: molecules.arrange – v1.1.1
 
 A [Blocss](https://github.com/Blocss/blocss/) component for horizontally and vertically arranging a single row of
 cells. Includes modifier classes for equal-width cells and gutter-separated
@@ -8,9 +8,7 @@ Read more about [Blocss](https://blocss.github.io/blocss).
 
 ## Installation
 
-* [Bower](http://bower.io/): `bower install --save blocss-arrange`
-* Download: [zip](https://github.com/Blocss/arrange/zipball/master)
-* Git: `git clone https://github.com/Blocss/arrange`
+    $ bower install --save blocss-arrange
 
 ## Available classes
 
