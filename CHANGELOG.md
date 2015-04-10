@@ -1,8 +1,12 @@
 == HEAD
 
+== 1.1.1 (Apr 10, 2015)
+
+* Updated readme
+
 == 1.1.0 (Apr 9, 2015)
 
-* added utf-8 header
+* comply to new blocss version
 
 == 1.0.3 (Oct 27, 2014)
 
