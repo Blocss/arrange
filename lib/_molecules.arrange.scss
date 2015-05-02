@@ -69,8 +69,8 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
 @mixin arrange-collapse () {
     display: block; /* 1 */
 
-    > .#{$blocss-grid-namespace}arrange__size-fill,
-    > .#{$blocss-grid-namespace}arrange__size-fit {
+    > .#{$blocss-arrange-namespace}arrange__size-fill,
+    > .#{$blocss-arrange-namespace}arrange__size-fit {
         display: block; /* 1 */
         width: 100%; /* 2 */
         padding-left: 0; /* 3 */
@@ -104,7 +104,7 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
  * 3. Reset the table-layout algorithm in case a component is nested.
  * 4. Make sure the component fills the full width of its parent.
  */
-.#{$blocss-grid-namespace}arrange {
+.#{$blocss-arrange-namespace}arrange {
     display: table; /* 1 */
     margin: 0; /* 2 */
     padding: 0; /* 2 */
@@ -122,8 +122,8 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
      *    Margin has no effect when coupled with `display: table-cell`.
      * 2. All cells are top-aligned by default
      */
-    .#{$blocss-grid-namespace}arrange__size-fill,
-    .#{$blocss-grid-namespace}arrange__size-fit {
+    .#{$blocss-arrange-namespace}arrange__size-fill,
+    .#{$blocss-arrange-namespace}arrange__size-fit {
         display: table-cell;
         padding: 0; /* 1 */
         vertical-align: top; /* 2 */
@@ -133,7 +133,7 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
     /**
      * Make sure the main content block expands to fill the remaining space.
      */
-    .#{$blocss-grid-namespace}arrange__size-fill {
+    .#{$blocss-arrange-namespace}arrange__size-fill {
         width: 100%;
     }
 
@@ -143,7 +143,7 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
          * 'arrange__size-fit' cannot be fluid, otherwise they lose their ability to
          * provide size to a cell.
          */
-        .#{$blocss-grid-namespace}arrange__size-fit img {
+        .#{$blocss-arrange-namespace}arrange__size-fit img {
             max-width: none;
             width: auto;
         }
@@ -153,26 +153,26 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Vertical alignment modifiers
 \*----------------------------------------------------------------------------*/
 
-.#{$blocss-grid-namespace}arrange--top {
+.#{$blocss-arrange-namespace}arrange--top {
 
-    > .#{$blocss-grid-namespace}arrange__size-fill,
-    > .#{$blocss-grid-namespace}arrange__size-fit {
+    > .#{$blocss-arrange-namespace}arrange__size-fill,
+    > .#{$blocss-arrange-namespace}arrange__size-fit {
         vertical-align: top;
     }
 }
 
-.#{$blocss-grid-namespace}arrange--middle {
+.#{$blocss-arrange-namespace}arrange--middle {
 
-    > .#{$blocss-grid-namespace}arrange__size-fill,
-    > .#{$blocss-grid-namespace}arrange__size-fit {
+    > .#{$blocss-arrange-namespace}arrange__size-fill,
+    > .#{$blocss-arrange-namespace}arrange__size-fit {
         vertical-align: middle;
     }
 }
 
-.#{$blocss-grid-namespace}arrange--bottom {
+.#{$blocss-arrange-namespace}arrange--bottom {
 
-    > .#{$blocss-grid-namespace}arrange__size-fill,
-    > .#{$blocss-grid-namespace}arrange__size-fit {
+    > .#{$blocss-arrange-namespace}arrange__size-fill,
+    > .#{$blocss-arrange-namespace}arrange__size-fit {
         vertical-align: bottom;
     }
 }
@@ -186,7 +186,7 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
  * This layout algorithm will create equal-width table cells, irrespective of
  * the width of their content.
  */
-.#{$blocss-grid-namespace}arrange--equal {
+.#{$blocss-arrange-namespace}arrange--equal {
     table-layout: fixed;
 
     /**
@@ -194,8 +194,8 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
      * It's recommended that only 'Arrange-sizeFill' be used for equal width cells.
      * Their inner images will automatically be responsive.
      */
-    > .#{$blocss-grid-namespace}arrange__size-fill,
-    > .#{$blocss-grid-namespace}arrange__size-fit {
+    > .#{$blocss-arrange-namespace}arrange__size-fill,
+    > .#{$blocss-arrange-namespace}arrange__size-fit {
         width: auto;
     }
 }
@@ -205,10 +205,10 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Gutter-separating modifier
 \*----------------------------------------------------------------------------*/
 
-.#{$blocss-grid-namespace}arrange--gutter {
+.#{$blocss-arrange-namespace}arrange--gutter {
 
-    > .#{$blocss-grid-namespace}arrange__size-fill,
-    > .#{$blocss-grid-namespace}arrange__size-fit {
+    > .#{$blocss-arrange-namespace}arrange__size-fill,
+    > .#{$blocss-arrange-namespace}arrange__size-fit {
         @include rem(padding-left, $blocss-arrange-gutter);
 
         &:first-child {
@@ -222,7 +222,7 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Arrange collapse
 \*----------------------------------------------------------------------------*/
 
-.#{$blocss-grid-namespace}arrange--collapse {
+.#{$blocss-arrange-namespace}arrange--collapse {
     @include arrange-collapse;
 }
 
@@ -234,7 +234,7 @@ $blocss-breakpoint-has-collapsed-arrange:  ()                      !default;
 /* Collapsed arrange based on breakpoint */
 @each $state in $blocss-breakpoint-has-collapsed-arrange {
     @include media-query(#{$state}) {
-        .#{$blocss-grid-namespace}arrange--collapse--#{$state} {
+        .#{$blocss-arrange-namespace}arrange--collapse--#{$state} {
             @include arrange-collapse;
         }
     }
