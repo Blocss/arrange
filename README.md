@@ -1,4 +1,4 @@
-# Blocss: molecules.arrange – v1.1.1
+# Blocss: molecules.arrange – v1.1.2
 
 A [Blocss](https://github.com/Blocss/blocss/) component for horizontally and vertically arranging a single row of
 cells. Includes modifier classes for equal-width cells and gutter-separated
