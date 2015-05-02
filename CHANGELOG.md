@@ -1,5 +1,9 @@
 == HEAD
 
+== 1.1.2 (May 2, 2015)
+
+* Fixed bug with faulty namaspace variable
+
 == 1.1.1 (Apr 10, 2015)
 
 * Updated readme
