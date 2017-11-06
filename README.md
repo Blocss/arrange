@@ -1,4 +1,6 @@
-# Blocss: molecules.arrange – v1.1.2
+# Blocss: molecules.arrange – v1.1.2 - Deprecated
+
+**This module has been moved to: ([https://github.com/Blocss/blocss](https://github.com/Blocss/blocss))**
 
 A [Blocss](https://github.com/Blocss/blocss/) component for horizontally and vertically arranging a single row of
 cells. Includes modifier classes for equal-width cells and gutter-separated
